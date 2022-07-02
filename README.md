@@ -71,7 +71,11 @@ To run the tests, check your test coverage, and generate an HTML coverage report
 
         ./scripts/local/docker/django_coverage.sh
 
--   Then open htmlcov/index.html to view the test coverage issues which need to be worked on.
+-   Then
+
+        open htmlcov/index.html
+
+        to view the test coverage issues which need to be worked on.
 
 ### Running Tests With Pytest
 
