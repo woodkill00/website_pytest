@@ -24,7 +24,7 @@ django-filter==21.1 # https://github.com/carltongibson/django-filter/tree/main
 # will need to upgrade to django-cities=0.6 with geo but need to add on to postgress
 # django-cities=0.6 # https://github.com/coderholic/django-cities
 django-countries==7.3.2 # https://github.com/SmileyChris/django-countries/
-django-celery-results==2.3.1 # https://github.com/celery/django-celery-results
+django-celery-results==2.4.0 # https://github.com/celery/django-celery-results
 phonenumbers==8.12.51 # https://github.com/daviddrysdale/python-phonenumbers
 django-phonenumber-field==6.3.0 # https://github.com/stefanfoulis/django-phonenumber-field
 # django-celery-email==3.0.0 # https://github.com/pmclanahan/django-celery-email
