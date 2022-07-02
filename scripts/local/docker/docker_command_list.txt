@@ -1,0 +1,34 @@
+echo "checking DOCKER CONTAINERS"
+docker container ls -a
+echo "checking DOCKER IMAGES"
+docker image ls -a
+echo "checking DOCKER VOLUMES"
+docker volume ls
+
+# One liner to stop / remove all of Docker containers:
+echo "STOPPING DOCKER CONTAINERS"
+docker stop $(docker ps -a -q)
+echo "REMOVING DOCKER CONTAINERS"
+docker container prune --force
+# docker rm $(docker ps -a -q)
+
+# Delete all images using the following command:
+echo "REMOVING DOCKER IMAGES"
+docker rmi $(docker images -q)
+echo "REMOVING DOCKER IMAGES -F"
+docker rmi -f $(docker images -q)
+echo "PRUNING DOCKER IMAGES"
+docker image prune --force
+
+# Delete all volumes using the following command:
+echo "DELETING DOCKER VOLUMES"
+docker system prune --volumes --all
+# docker volume rm --force
+# docker volume rm $(docker volume ls -q)
+
+echo "checking DOCKER CONTAINERS"
+docker container ls -a
+echo "checking DOCKER IMAGES"
+docker image ls -a
+echo "checking DOCKER VOLUMES"
+docker volume ls

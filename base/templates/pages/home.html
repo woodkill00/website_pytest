@@ -1,0 +1,296 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}Home{% endblock title %}
+{% block css %}
+<style>
+</style>
+{% endblock css %}
+
+
+{% block content %}
+<div id="carouselExampleCaptions" class="carousel slide my-5" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      {% comment %} <img src="..." class="d-block w-100" alt="..."> {% endcomment %}
+      <img src="{% static "common/images/home/home_carousel_1.jpg" %}" class="d-block w-100 crop" alt="{% translate "home_carousel_1" %}" style="height:400px; object-fit:cover;">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="border border-danger border-5 text-danger w-25">VIDEO TESTIMONIALS</h5>
+        {% comment %} <p>Some representative placeholder content for the first slide.</p> {% endcomment %}
+      </div>
+    </div>
+    <div class="carousel-item">
+      {% comment %} <img src="..." class="d-block w-100" alt="..."> {% endcomment %}
+      <img src="{% static "common/images/home/home_carousel_2.jpg" %}" class="d-block w-100 crop" alt="{% translate "home_carousel_2" %}" style="height:400px; object-fit:cover;">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="border border-danger border-5 text-danger w-25">COMPETITIVE ADVANTAGE</h5>
+        {% comment %} <p>Some representative placeholder content for the second slide.</p> {% endcomment %}
+      </div>
+    </div>
+    <div class="carousel-item">
+      {% comment %} <img src="..." class="d-block w-100" alt="..."> {% endcomment %}
+      <img src="{% static "common/images/home/home_carousel_3.jpg" %}" class="d-block w-100 crop" alt="{% translate "home_carousel_3" %}" style="height:400px; object-fit:cover;">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="border border-danger border-5 text-danger w-25">INTUITIVE CONSULTATION</h5>
+        {% comment %} <p>Some representative placeholder content for the third slide.</p> {% endcomment %}
+      </div>
+    </div>
+    <div class="carousel-item">
+      {% comment %} <img src="..." class="d-block w-100" alt="..."> {% endcomment %}
+      <img src="{% static "common/images/home/home_carousel_4.jpg" %}" class="d-block w-100 crop" alt="{% translate "home_carousel_4" %}" style="height:400px; object-fit:cover;">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="border border-danger border-5 text-danger w-25">JESSE JAMES ACADEMY</h5>
+        {% comment %} <p>Some representative placeholder content for the third slide.</p> {% endcomment %}
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="container marketing mt-5">
+  <!-- Three columns of text below the carousel -->
+  <div class="row my-5 mt-5">
+    <div class="col-lg-3 align-self-center">
+      <img src="{% static "common/images/icons/svg/star-icon-complex.svg" %}" class="d-block w-100 crop" alt="{% translate "home_carousel_1" %}" style="height:150px;">
+      <h5 class="my-5 text-danger text-center">JESSE JAMES METHOD™</h5>
+      <p class="text-center">Are you ready to experience a physical, mental and emotional competitive advantage in every moment?</p>
+      <p class="d-flex justify-content-center mt-5"><a class="btn btn-danger text-center" href="#" role="button">LEARN MORE</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-3 align-self-center">
+      <img src="{% static "common/images/icons/svg/heart-icon-complex.svg" %}" class="d-block w-100 crop" alt="{% translate "home_carousel_1" %}" style="height:150px;">
+      <h5 class="my-5 text-danger text-center">NEXT LEVEL PERFORMANCE</h5>
+      <p class="text-center">Are you a professional athlete? Are you ready to have your body BE in peak performance? I can help.</p>
+      <p class="d-flex justify-content-center mt-5"><a class="btn btn-danger" href="#" role="button">LEARN MORE</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-3 align-self-center">
+      <img src="{% static "common/images/icons/svg/smile-icon-complex.svg" %}" class="d-block w-100 crop" alt="{% translate "home_carousel_1" %}" style="height:150px;">
+      <h5 class="my-5 text-danger text-center">PIVOT TO PROFIT FOR HEALERS</h5>
+      <p class="text-center">Are you an alternative healer ready to consistently create, a 20 hour week, thriving six figure business?</p>
+      <p class="d-flex justify-content-center mt-5"><a class="btn btn-danger" href="#" role="button">LEARN MORE</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-3 align-self-center">
+      <img src="{% static "common/images/icons/svg/flower-icon-complex.svg" %}" class="d-block w-100 crop" alt="{% translate "home_carousel_1" %}" style="height:150px;">
+      <h5 class="my-5 text-danger text-center">FOCUS FOUR ME MEDITATIONS</h5>
+      <p class="text-center">Are you ready to manifest your goals faster? I can help you learn to emotionally visualize your dreams into reality.</p>
+      <p class="d-flex justify-content-center mt-5"><a class="btn btn-danger" href="#" role="button">LEARN MORE</a></p>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-12 col-lg-6 order-first">
+      <h3 class="text-center text-danger fw-bold my-5">WELCOME!</h3>
+      <h4 class="text-center text-danger fw-bold my-5">ALLOW JESSE TO GUIDE YOU THROUGH A JOURNEY OF RESETTING YOUR MIND AND BODY TO IT’S NATURAL STATE OF HARMONY?</h4>
+      <p class="text-justify my-5">Jesse is best known as an intuitive, tissue whisperer; a messenger for the soul.
+        As a success performance coach, mentor, meditation guide and instructor of the Jesse James Method™,
+        he has studied thousands of hours of personal growth, masterminds, spiritual practices and energy work.
+        His intuitive blend of connecting emotions and thoughts to pain in the body has made him a global, sought after therapist.
+        He relentlessly pursues new modalities, practices and techniques that deliver the kind of predictable, reliable results Jesse James clients have come to expect.
+      </p>
+      <p class="text-justify my-5">Jesse James became interested in bodywork after receiving a massage in 2000 that literally changed his life.
+         Amazed at how much healthier, productive and happier he felt, Jesse decided to make touch and the healing arts his life’s work.
+      </p>
+      <p class="text-justify my-5">
+        Over twenty years in the industry, Jesse holds the license of Master Medical Massage Therapist, having amassed more than 3,500 hours of training and delivered in excess of 28,000 hours of on-body work.
+        He created the Jesse James Method™, a full body reset that has quickly become the preferred treatment of professional athletes and health professionals.
+        As a teacher, Jesse has worked with the fitness trainers and physical therapists of Major League Baseball’s “Cactus League,” teaching them techniques to enhance player development and improve performance.
+        His treatment philosophy is highlighted in the book You’re Lucky To Be Alive Despite Your Healthcare: A Practical Guide to Patient Navigation by patient advocate and author Lindsey Kroll.
+        He is a featured instructor in Ms. Kroll’s patient advocacy curriculum at Gateway Community College in Phoenix, Arizona.
+      </p>
+      <p class="text-justify my-5">
+        Find out for yourself what all the fuss is about. Schedule your body reset with Jesse today.
+      </p>
+
+      <h6 class="mt-5 mb-2">What is the Jesse James Method™</h6>
+      <iframe width="550" height="309" src="https://www.youtube.com/embed/PZq3SQnR8e8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <h6 class="mt-5 mb-2">Does cupping therapy hurt?</h6>
+      <iframe width="550" height="309" src="https://www.youtube.com/embed/hQj6OyhtssM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    </div>
+
+    <div class="col-sm-12 col-lg-6">
+      <h3 class="text-center text-danger fw-bold my-5">ALEX DICKERSON – SAN FRANCISCO GIANTS</h3>
+      <h4 class="text-center text-danger fw-bold my-5">ATTRIBUTES HIS 2020 SUCCESS TO THE JESSE JAMES METHOD.</h4>
+
+      <h6 class="mt-5 mb-2">Alex Dickerson San Francisco Giants 2020 Success w/ Jesse James Method</h6>
+      <iframe width="550" height="309" src="https://www.youtube.com/embed/PbRA66S3R90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h6 class="mt-5 mb-2">Pain Blockages Gone - Johnjay VanEs</h6>
+      <iframe width="550" height="309" src="https://www.youtube.com/embed/ZxGswFzAio0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h6 class="mt-5 mb-2">CEO Competitive Advantage - Bradley Zall</h6>
+      <iframe width="550" height="309" src="https://www.youtube.com/embed/jJJm7F9w5oQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h6 class="mt-5 mb-2">Hip Bursitis Relief Hiking Injury - Therese Vereen</h6>
+      <iframe width="550" height="309" src="https://www.youtube.com/embed/skqKfyzFTYw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h6 class="mt-5 mb-2">Weekend Warrior Athlete - Kaileb Wyatt</h6>
+      <iframe width="550" height="309" src="https://www.youtube.com/embed/n6VkK9BpgTg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row my-5 text-center">
+    <div>
+        <a href="https://www.facebook.com/JesseJamesBodyWellness/?pnref=lhc" target="_blank" class="me-4 text-danger fs-1"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/JJBwellness" target="_blank" class="me-4 text-danger"><i class="fab fa-twitter fs-1"></i></a>
+        <a href="https://www.youtube.com/user/JesseJamesMassage" target="_blank" class="me-4 text-danger"><i class="fab fa-youtube fs-1"></i></a>
+        <a href="https://www.instagram.com/jessejamesmethod/" target="_blank" class="me-4 text-danger"><i class="fab fa-instagram fs-1"></i></a>
+        <a href="https://www.yelp.com/biz/jesse-james-body-wellness-scottsdale?utm_medium=biz_embedded_content&utm_source=biz_badge" target="_blank" class="me-4 text-danger fs-1"><i class="fab fa-yelp"></i></a>
+        <a href="https://wa.me/16025731309" target="_blank" class="me-4 text-danger"><i class="fab fa-whatsapp fs-1"></i></a>
+        {% comment %} <a href="" class="me-4 text-dark"><i class="fab fa-linkedin"></i></a> {% endcomment %}
+    </div>
+  <div class="row my-5 text-center">
+    <div>
+      Yelp Badge here, need to get code from yelp
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid my-5">
+  <div class="row">
+    <div>
+      <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            {% comment %} <img src="..." class="d-block w-100" alt="..."> {% endcomment %}
+            <p class="text-center fst-italic">
+                The Jesse James Massage Method is for anyone who demands the best of their body and mind.
+                It is a whole-body treatment process, intuitively designed to release the muscles so they can heal and work as designed.
+                As a result of working with my JJM therapist over the last few years, I have come to understand how something as simple as decision making impacts my body, and how my body compensates over time by holding in the effects of stress and shock.
+              <br>
+            </p>
+            <p class="text-center fst-italic">
+                When you consider the literally thousands of decisions we make every day from the moment we get out of bed, it’s not hard to imagine how chronic pain begins to develop and sustain over time!
+                I first came to Jesse James Massage to assist with healing neck and shoulder pain I had been suffering, but over time I have consistently experienced greater mental clarity, dramatic improvement in my workouts and rapid recovery.
+              <br>
+            </p>
+            <p class="text-center fst-italic">
+                I say the JJ Method vastly promotes the body’s ability to heal itself (my empirical evidence being that I don’t think I’ve been sick since becoming a client) and so I now recommend Jesse James Massage to everyone I know.
+              <br>
+            </p>
+            <p class="fw-bolder text-center">
+              Monique Whitney, client since 2010
+            </p>
+            <p class="text-muted text-center">
+              PR Marketing Development
+            </p>
+          </div>
+          <div class="carousel-item">
+            {% comment %} <img src="..." class="d-block w-100" alt="..."> {% endcomment %}
+            <p class="text-center fst-italic">
+                After years of chiropractic care with Dr. Josh Haggard he referred me to get a Jesse James Massage.
+                He felt like this would help my low back and legs. My IT band is wound so tight you could play music on it.
+                I went to see Jesse and here is what happened... I was cupped, not copped!
+              <br>
+            </p>
+            <p class="text-center fst-italic">
+                Chinese Cupping is an ancient form of muscle healing therapy.  It involves the placement of several small glass hemispheres with suction cups that when positioned over a muscle and activated, draw blood to the area for healing all kinds of ailments.  In my case, the blood helped separate a layer of protective tissue from the muscles so they could receive hydration more effectively, improving the state of my muscles that resemble beef jerky (as he described my condition so I could understand it).
+              <br>
+            </p>
+            <p class="text-center fst-italic">
+                Jesse's therapy is unique.  I have been getting massages for over 20 years. I am an active skier and work out 3-4 times a week.
+                I have also suffered with low back pain. Within 3 sessions with Jesse my low back pain had almost disappeared.
+                Jesse's approach to my low back issue was unlike any other therapy I have ever had and it is EFFECTIVE.
+                No two bodies are alike; nor should be massage therapy.
+              <br>
+            </p>
+            <p class="text-center fst-italic">
+                Read the testimonials before mine and be assured we all write in unison. Recently I injured my back again.
+                This has been a reoccurring injury. Last time it took over 6 months to heal.
+                Jesse said because of the work we have been doing you will recover much faster this time, even within weeks.
+                I wanted to believe Jesse but history has a way of reminding me.
+              <br>
+            </p>
+            <p class="text-center fst-italic">
+                Thank you Jesse and Dr. Josh for getting me back on my feet in only as couple of weeks. Go see Jesse and get a Jesse James Massage and go see Dr. Josh. They are both MASTERS in their field.
+              <br>
+            </p>
+            <p class="fw-bolder text-center">
+              Russ Pomerantz, client since 2011
+            </p>
+            <p class="text-muted text-center">
+              Community Liaison
+            </p>
+          </div>
+          <div class="carousel-item">
+            {% comment %} <img src="..." class="d-block w-100" alt="..."> {% endcomment %}
+            <div class="user_text mb-3">
+              <p class="text-center fst-italic">
+                    I am so grateful to have found Jesse! I’ve been training in Taekwon-Do since I was 4 yrs old and competing internationally with the U.S.
+                    ITF Taekwon-Do Team since 1995. In 2004, I was Team Captain and we won the World Championships in South Korea.
+                    In addition to the physical training and eating right, massage was a crucial part of my training.
+                    It helped my body recover from intense workouts and allowed my body to come back from injuries faster than I thought possible.
+                    When I began getting massages from Jesse and it was like night and day comparing Jesse to massages I’ve had in the past.
+                    I’ve used therapists that range from $150 to $250 per session and none of them have produced the results I’ve seen since working with Jesse.
+                    His ability to scan the body and pin point what is going on with you in a matter of minutes, even seconds astounds me!
+                    I’ll come in talking about something wrong with my back and after 10 minutes of him working on my calf, my back feels great!
+                    He’s a master at seeing what your body is dealing with and what it really needs.
+                    I’m currently training for the Taekwon-Do World Cup in Las Vegas in 2010 and I know Jesse will be a big part of my success.
+                  <br>
+              </p>
+              <p class="fw-bolder text-center">
+                Johnny Karstadt, client since 2009
+              </p>
+              <p class="text-muted text-center">
+                Taekwon-Do World Champion
+              </p>
+          </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row mt-5">
+    <div class="col">
+      <h6 class="mt-5 mb-2">Praise</h6>
+      <iframe width="370" height="208" src="https://www.youtube.com/embed/lEcSrdaYIF0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col">
+      <h6 class="mt-5 mb-2">Jesse James Method™</h6>
+      <iframe width="370" height="208" src="https://www.youtube.com/embed/PZq3SQnR8e8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col">
+      <h6 class="mt-5 mb-2">In the News</h6>
+      <iframe width="370" height="208" src="https://www.youtube.com/embed/yQ-_ghpUPxM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col">
+      <h6 class="mt-5 mb-2">Jesse James Wellness Center</h6>
+      <iframe width="370" height="208" src="https://www.youtube.com/embed/QnIesri3CAg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col">
+      <h6 class="mt-5 mb-2">Tip of the Week</h6>
+      <iframe width="370" height="208" src="https://www.youtube.com/embed/egl220gm7Sk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col">
+      <h6 class="mt-5 mb-2">Jesse James Method™</h6>
+      <iframe width="370" height="208" src="https://www.youtube.com/embed/jQ-mfFq_3w8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

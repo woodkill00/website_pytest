@@ -1,0 +1,40 @@
+pytz==2022.1  # https://github.com/stub42/pytz
+python-slugify==6.1.1  # https://github.com/un33k/python-slugify
+Pillow==9.1.0  # https://github.com/python-pillow/Pillow
+argon2-cffi==21.3.0  # https://github.com/hynek/argon2_cffi
+whitenoise==6.0.0  # https://github.com/evansd/whitenoise
+redis==4.2.2  # https://github.com/redis/redis-py
+hiredis==2.0.0  # https://github.com/redis/hiredis-py
+celery==5.2.6  # pyup: < 6.0  # https://github.com/celery/celery
+django-celery-beat==2.2.1  # https://github.com/celery/django-celery-beat
+flower==1.1.0  # https://github.com/mher/flower
+
+# Django
+# ------------------------------------------------------------------------------
+django==3.2.13  # pyup: < 4.0  # https://www.djangoproject.com/
+django-environ==0.8.1  # https://github.com/joke2k/django-environ
+django-model-utils==4.2.0  # https://github.com/jazzband/django-model-utils
+django-allauth==0.50.0  # https://github.com/pennersr/django-allauth
+django-crispy-forms==1.14.0  # https://github.com/django-crispy-forms/django-crispy-forms
+crispy-bootstrap5==0.6  # https://github.com/django-crispy-forms/crispy-bootstrap5
+django-redis==5.2.0  # https://github.com/jazzband/django-redis
+django-filter==21.1 # https://github.com/carltongibson/django-filter/tree/main
+# django.forms==*
+# django-cities-light=3.9.0 # https://github.com/yourlabs/django-cities-light
+# will need to upgrade to django-cities=0.6 with geo but need to add on to postgress
+# django-cities=0.6 # https://github.com/coderholic/django-cities
+django-countries==7.3.2 # https://github.com/SmileyChris/django-countries/
+django-celery-results==2.3.1 # https://github.com/celery/django-celery-results
+phonenumbers==8.12.51 # https://github.com/daviddrysdale/python-phonenumbers
+django-phonenumber-field==6.3.0 # https://github.com/stefanfoulis/django-phonenumber-field
+# django-celery-email==3.0.0 # https://github.com/pmclanahan/django-celery-email
+django-ckeditor==6.4.0 # https://github.com/django-ckeditor/django-ckeditor
+django-colorfield==0.7.1 # https://github.com/fabiocaccamo/django-colorfield
+django-money==2.1.1 # https://github.com/django-money/django-money
+django-watson==1.6.2 # http://github.com/etianen/django-watson #
+django-social-share==2.2.1 # https://github.com/fcurella/django-social-share
+# django-social-widgets==0.5.0 # https://github.com/creafz/django-social-widgets
+
+# Stripe
+# ------------------------------------------------------------------------------
+stripe==2.75.0 # https://github.com/stripe/stripe-python

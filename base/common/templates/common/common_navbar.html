@@ -1,0 +1,133 @@
+{% load static %}
+{% load i18n %}
+
+<!-- NAVBAR -->
+<nav id="navbar_top" class="navbar sticky-top navbar-expand-lg navbar-light mb-5">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    {% comment %} <a class="navbar-brand" href="{% url 'home' %}">Menu</a> {% endcomment %}
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarsExample05"
+      aria-controls="navbarsExample05"
+      aria-expanded="false"
+      {% comment %} aria-expanded="false" {% endcomment %}
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      {% comment %} <i class="fas fa-bars"></i> {% endcomment %}
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="navbar-collapse collapse justify-content-center" id="navbarsExample05" style="">
+      <ul class="navbar-nav ">
+      {% comment %} <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav justify-content-lg-center"> {% endcomment %}
+      {% comment %} <ul class="navbar-nav me-auto mb-2 mb-lg-0"> {% endcomment %}
+        {% comment %} <li class="nav-item">
+          <a class="nav-link" href="{% url 'company:company_home' %}">Companies</a>
+        </li> {% endcomment %}
+        <li class="nav-item mx-2">
+          <a class="nav-link  text-dark" href="{% url 'home' %}">{% translate "WELCOME" %}</a>
+        </li>
+        <li class="nav-item mx-2 dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">{% translate "JESSE JAMES METHOD" %}&trade;</a>
+          <ul class="dropdown-menu border-0" aria-labelledby="dropdown05">
+            <li><a class="dropdown-item text-dark" href="#">{% translate "METHOD" %}</a></li>
+          </ul>
+        </li>
+        <li class="nav-item mx-2 dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">{% translate "JESSE JAMES ACADEMY" %}</a>
+          <ul class="dropdown-menu border-0" aria-labelledby="dropdown05">
+            <li><a class="dropdown-item text-dark disabled" href="#">{% translate "ACADEMY" %}</a></li>
+          </ul>
+        </li>
+        <li class="nav-item mx-2 dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">{% translate "FOCUS FOR ME" %}</a>
+          <ul class="dropdown-menu border-0" aria-labelledby="dropdown05">
+            <li><a class="dropdown-item text-dark disabled" href="#">{% translate "FOCUS 4 ME" %}</a></li>
+            <li><a class="dropdown-item text-dark" href="#">{% translate "FOUR MINUTE MEDITATIONS" %}</a></li>
+          </ul>
+        </li>
+        <li class="nav-item mx-2 dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">{% translate "SHOP" %}</a>
+          <ul class="dropdown-menu border-0" aria-labelledby="dropdown05">
+            <li><a class="dropdown-item text-dark" href="#">{% translate "SHOP" %}</a></li>
+            <li><a class="dropdown-item text-dark disabled" href="#">{% translate "SCHEDULE" %}</a></li>
+          </ul>
+        </li>
+        {% if request.user.is_authenticated %}
+        <li class="nav-item mx-2 dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdown06" data-bs-toggle="dropdown" aria-expanded="false">{% translate "BLOG" %}</a>
+          {% comment %} <a class="nav-link text-dark" href="{% url 'about' %}">{% translate "ABOUT" %}</a> {% endcomment %}
+          <ul class="dropdown-menu border-0" aria-labelledby="dropdown06">
+            <li><a class="dropdown-item text-dark" href="#">{% translate "BLOG PORTAL" %}</a></li>
+            <li><a class="dropdown-item text-dark" href="#">{% translate "ADD POST" %}</a></li>
+            <li><a class="dropdown-item text-dark" href="#">{% translate "ADD CATEGORY" %}</a></li>
+            {% comment %} <li><a class="dropdown-item text-dark" href="{% url 'blog:blog-post-category-add' %}">{% translate "ADD TAG" %}</a></li> {% endcomment %}
+          </ul>
+        </li>
+        {% else %}
+        <li class="nav-item mx-2">
+          <a class="nav-link text-dark" href="#">{% translate "BLOG" %}</a>
+          {% endif %}
+        </li>
+        <li class="nav-item mx-2 dropdown">
+          <a class="nav-link dropdown-toggle text-dark" href="#" id="dropdown07" data-bs-toggle="dropdown" aria-expanded="false">{% translate "ABOUT" %}</a>
+          {% comment %} <a class="nav-link text-dark" href="{% url 'about' %}">{% translate "ABOUT" %}</a> {% endcomment %}
+          <ul class="dropdown-menu border-0" aria-labelledby="dropdown07">
+            <li><a class="dropdown-item text-dark" href="#">{% translate "MAIN" %}</a></li>
+            <li><a class="dropdown-item text-dark" href="#">{% translate "IN THE NEWS" %}</a></li>
+            <li><a class="dropdown-item text-dark" href="#">{% translate "VISION MISSION VALUES" %}</a></li>
+            <li><a class="dropdown-item text-dark" href="#">{% translate "JESSE JAMES BIO" %}</a></li>
+            <li><a class="dropdown-item text-dark" href="#">{% translate "PRIVACY POLICY" %}</a></li>
+            <li><a class="dropdown-item text-dark" href="#">{% translate "CONTACT" %}</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <form class="col-11 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+      </form>
+      {% comment %} <div class="col-1">
+        <i class="fas fa-search"></i>
+      </div> {% endcomment %}
+      <div class="m-3">
+        <a href="" class="me-4 text-dark"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+
+      <div class="flex-shrink-0 dropdown">
+        {% if request.user.is_authenticated %}
+        <!-- Avatar -->
+        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="navbarDropdownMenuAvatar" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="{% static 'common/images/default/default_user_icon.svg' %}" alt="default_user_icon" class="rounded-circle" width="32" height="32">
+        </a>
+        <ul class="dropdown-menu border-0 text-small shadow" aria-labelledby="navbarDropdownMenuAvatar" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 34px, 0px);" data-popper-placement="bottom-end">
+          <li><a class="dropdown-item" href="#">New project...</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="{% url 'users:detail' request.user.username  %}">{% translate "My Profile" %}</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="{% url 'account_logout' %}">{% translate "Sign Out" %}</a></li>
+        </ul>
+        {% else %}
+        <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="navbarDropdownMenuAvatar" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="{% static 'common/images/default/default_user_icon.svg' %}" alt="default_user_icon" class="rounded-circle" width="32" height="32">
+        </a>
+        <ul class="dropdown-menu border-0 text-small shadow" aria-labelledby="navbarDropdownMenuAvatar" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 34px, 0px);" data-popper-placement="bottom-end">
+          <li><a class="dropdown-item" href="{% url 'account_login' %}">{% translate "Login" %}</a></li>
+          <li><hr class="dropdown-divider"></li>
+          {% if ACCOUNT_ALLOW_REGISTRATION %}
+          <li><a class="dropdown-item" href="{% url 'account_signup' %}">{% translate "Sign Up" %}</a></li>
+          {% endif %}
+        </ul>
+        {% endif %}
+      </div>
+    </div>
+    </div>
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- NAVBAR END -->

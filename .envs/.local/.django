@@ -1,0 +1,33 @@
+# General
+# ------------------------------------------------------------------------------
+USE_DOCKER=yes
+IPYTHONDIR=/app/.ipython
+# Redis
+# ------------------------------------------------------------------------------
+REDIS_URL=redis://redis:6379/0
+
+# Celery
+# ------------------------------------------------------------------------------
+
+# Flower
+CELERY_FLOWER_USER=admin
+CELERY_FLOWER_PASSWORD=somepassword
+
+# STRIPE
+# ------------------------------------------------------------------------------
+STRIPE_SECRET_KEY=somekey
+# STRIPE_SECRET_KEY=STRIPE_LIVE_SECRET_KEY
+# STRIPE_LIVE_SECRET_KEY=somekey
+STRIPE_PUBLIC_KEY=somekey
+# STRIPE_PUBLIC_KEY=STRIPE_LIVE_PUBLIC_KEY
+STRIPE_LIVE_PUBLIC_KEY=somekey
+STRIPE_WEBHOOK_SECRET=somekey
+# STRIPE_WEBHOOK_SECRET=STRIPE_LIVE_WEBHOOK_SECRET
+STRIPE_LIVE_WEBHOOK_SECRET=somekey
+
+# PAYPAL
+# ------------------------------------------------------------------------------
+PAYPAL_CLIENT_ID=somekey
+PAYPAL_SANDBOX_CLIENT_ID=somekey
+PAYPAL_SECRET_KEY=somekey
+PAYPAL_SANDBOX_SECRET_KEY=somekey

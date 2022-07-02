@@ -1,0 +1,102 @@
+{% load static i18n %}<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
+  <head>
+    <title>{% block title %}{% endblock title %}</title>
+    {% include 'common/common_head_meta.html' %}
+
+    {% comment %} <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}"> {% endcomment %}
+    {% include 'common/common_head_favicon.html' %}
+    {% include 'common/common_head_font_awesome.html' %}
+    {% comment %} {% include 'common/common_head_boxicons.html' %} {% endcomment %}
+    {% comment %} {% include 'common/common_head_css.html' %} {% endcomment %}
+    {% comment %} {% include 'common/common_head_dropzone_js.html' %} {% endcomment %}
+    {% comment %} {% include 'common/common_head_simple_scrollbar.html' %} {% endcomment %}
+
+
+    <link href="{% static 'common/css/project.min.css' %}" rel="stylesheet">
+    {% comment %} <style>
+    </style> {% endcomment %}
+    {% block css %}
+
+    <!-- Your stuff: Third-party CSS libraries go here -->
+    <!-- This file stores project-specific CSS -->
+    {% endblock %}
+    <!-- Le javascript
+    ================================================== -->
+    {# Placed at the top of the document so pages load faster with defer #}
+    <!-- Vendor dependencies bundled as one file-->
+    <script defer src="{% static 'common/js/vendors.js' %}"></script>
+
+    <!-- place project specific Javascript in this file -->
+    <script defer src="{% static 'common/js/project.js' %}"></script>
+
+    {% block javascript %}
+    {% endblock javascript %}
+
+  </head>
+
+  <body>
+    <header class="">
+      {% include 'common/common_navbar_header.html' %}
+      {% include 'common/common_navbar.html' %}
+      {% block contentHeader %}
+
+      {% endblock contentHeader %}
+    </header>
+
+    <main>
+      <div class="container-fluid">
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-dismissible {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div> <!-- /container -->
+
+      {% block content %}
+
+      {% endblock content %}
+          {% comment %} {% block content %}{% endblock content %} {% endcomment %}
+          {% comment %} {% block content %}
+            <p>Use this document as a way to quick start any new project.</p>
+          {% endblock content %} {% endcomment %}
+
+    </main>
+
+    {% include 'common/common_footer.html' %}
+
+    {% block modal %}{% endblock modal %}
+
+    {% block inline_javascript %}
+      {% comment %}
+      Script tags with only code, no src (defer by default). To run
+      with a "defer" so that you run inline code:
+      <script>
+        window.addEventListener('DOMContentLoaded', () => {/* Run whatever you want */});
+      </script>
+      {% endcomment %}
+      {% comment %} <script>
+        document.addEventListener("DOMContentLoaded", function(){
+          window.addEventListener('scroll', function() {
+              if (window.scrollY > 50) {
+                document.getElementById('navbar_top').classList.add('fixed-top');
+                // add padding top to show content behind navbar
+                navbar_height = document.querySelector('.navbar').offsetHeight;
+                document.body.style.paddingTop = navbar_height + 'px';
+              } else {
+                document.getElementById('navbar_top').classList.remove('fixed-top');
+                 // remove padding top from body
+                document.body.style.paddingTop = '0';
+              }
+          });
+        });
+        // DOMContentLoaded  end
+      </script> {% endcomment %}
+    {% endblock inline_javascript %}
+
+  </body>
+</html>

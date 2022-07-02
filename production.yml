@@ -1,0 +1,106 @@
+version: '3'
+
+volumes:
+  production_postgres_data: {}
+  production_postgres_data_backups: {}
+  # production_pgadmin_data: {}
+  production_traefik: {}
+
+services:
+  django: &django
+    build:
+      context: .
+      dockerfile: ./compose/production/django/Dockerfile
+    image: django
+    container_name: "django"
+    # image: base_production_django
+    platform: linux/x86_64
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - ./.env
+      # - ./.envs/.production/.django
+      # - ./.envs/.production/.postgres
+    command: /start
+
+  postgres:
+    build:
+      context: .
+      dockerfile: ./compose/production/postgres/Dockerfile
+    image: postgres
+    container_name: "postgres"
+    # image: base_production_postgres
+    volumes:
+      - production_postgres_data:/var/lib/postgresql/data:Z
+      - production_postgres_data_backups:/backups:z
+    env_file:
+      - ./.env
+      # - ./.envs/.production/.postgres
+
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   container_name: pgadmin
+  #   restart: always
+  #   ports:
+  #     - "5050:80"
+  #   env_file:
+  #     - ./.env
+  #   volumes:
+  #     - production_pgadmin_data:/var/lib/pgadmin
+
+  traefik:
+    build:
+      context: .
+      dockerfile: ./compose/production/traefik/Dockerfile
+    image: traefik
+    container_name: "traefik"
+    # image: base_production_traefik
+    depends_on:
+      - django
+    volumes:
+      - production_traefik:/etc/traefik/acme:z
+    env_file:
+      - ./.env
+    ports:
+      - "0.0.0.0:80:80"
+      - "0.0.0.0:443:443"
+      - "0.0.0.0:5555:5555"
+      # - "0.0.0.0:5050:5050"
+
+  redis:
+    image: redis:6
+    container_name: redis
+
+  celeryworker:
+    <<: *django
+    image: celeryworker
+    container_name: "celeryworker"
+    # image: base_production_celeryworker
+    command: /start-celeryworker
+    depends_on:
+      - postgres
+      - redis
+      - django
+
+  celerybeat:
+    <<: *django
+    image: celerybeat
+    container_name: "celerybeat"
+    # image: base_production_celerybeat
+    command: /start-celerybeat
+    depends_on:
+      - postgres
+      - redis
+      - django
+
+  flower:
+    <<: *django
+    image: flower
+    container_name: "flower"
+    # image: base_production_flower
+    command: /start-flower
+    depends_on:
+      - postgres
+      - redis
+      - django
