@@ -30,7 +30,7 @@ django-phonenumber-field==6.3.0 # https://github.com/stefanfoulis/django-phonenu
 # django-celery-email==3.0.0 # https://github.com/pmclanahan/django-celery-email
 django-ckeditor==6.4.2 # https://github.com/django-ckeditor/django-ckeditor
 django-colorfield==0.7.1 # https://github.com/fabiocaccamo/django-colorfield
-django-money==2.1.1 # https://github.com/django-money/django-money
+django-money==3.0.0 # https://github.com/django-money/django-money
 django-watson==1.6.2 # http://github.com/etianen/django-watson #
 django-social-share==2.2.1 # https://github.com/fcurella/django-social-share
 # django-social-widgets==0.5.0 # https://github.com/creafz/django-social-widgets
