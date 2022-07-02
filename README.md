@@ -75,7 +75,7 @@ To run the tests, check your test coverage, and generate an HTML coverage report
 
         open htmlcov/index.html
 
-        to view the test coverage issues which need to be worked on.
+to view the test coverage issues which need to be worked on.
 
 ### Running Tests With Pytest
 
