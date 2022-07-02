@@ -18,7 +18,7 @@ django-allauth==0.51.0  # https://github.com/pennersr/django-allauth
 django-crispy-forms==1.14.0  # https://github.com/django-crispy-forms/django-crispy-forms
 crispy-bootstrap5==0.6  # https://github.com/django-crispy-forms/crispy-bootstrap5
 django-redis==5.2.0  # https://github.com/jazzband/django-redis
-django-filter==21.1 # https://github.com/carltongibson/django-filter/tree/main
+django-filter==22.1 # https://github.com/carltongibson/django-filter/tree/main
 # django.forms==*
 # django-cities-light=3.9.0 # https://github.com/yourlabs/django-cities-light
 # will need to upgrade to django-cities=0.6 with geo but need to add on to postgress
