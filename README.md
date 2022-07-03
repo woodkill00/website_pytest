@@ -3,6 +3,9 @@
 django development website pytest
 
 ## Basic Commands
+-   All commands are based for linux
+
+        If you are using a different operating system then you will need change them accordingly.
 
 ### Setup
 -   Make project container folder, use this command:
